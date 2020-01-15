@@ -17,8 +17,9 @@ Fork & Clone Repo from:
 ### Getting Started
 
 1. `cd cat-list-app`
-2. `npm install`
-3. `npm start`
+2. `yarn`
+3. `yarn start`
+4. If browser doesn't automatically open, visit <http://localhost:3000/>
 
 ## Contributing
 
