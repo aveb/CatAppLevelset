@@ -2,8 +2,8 @@ import React from "react"
 import { Row, Col, Image } from "react-bootstrap"
 
 export default function CatListItem({ catInfo, setCatProfile }) {
-
   const handleClick = () => {
+    // update catProfile state
     setCatProfile(catInfo)
   }
 

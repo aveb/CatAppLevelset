@@ -20,13 +20,13 @@ function App() {
   return (
     <Container>
       <Row>
-        <Col xs sm={4} style={colStyle}>
+        <Col xs sm lg={4} style={colStyle}>
           <Row style={search}>
             <h4>Search Component</h4>
           </Row>
           <CatList setCatProfile={setCatProfile} />
         </Col>
-        <Col>
+        <Col xs sm lg={8}>
           <CatProfile catProfile={catProfile} />
         </Col>
       </Row>
