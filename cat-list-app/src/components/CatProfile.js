@@ -1,5 +1,6 @@
 import React from "react"
 import { Container, Row, Col, Image } from "react-bootstrap"
+import ProfileButtons from "./ProfileButtons"
 
 // styles
 const center = {
@@ -34,6 +35,9 @@ export default function CatProfile({catProfile}) {
           </Col>
           <Col>
             <h3>Viewed {viewsCount} times</h3>
+          </Col>
+          <Col>
+            <ProfileButtons />
           </Col>
         </Row>
       </Container>
