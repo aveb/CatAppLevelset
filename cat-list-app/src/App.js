@@ -6,9 +6,12 @@ import "bootstrap/dist/css/bootstrap-theme.min.css"
 import { Container, Row, Col } from "react-bootstrap"
 import CatList from "./components/CatList"
 import CatProfile from "./components/CatProfile"
-// column styles
+// styles
 const colStyle = {
-  borderRight: "1px solid black"
+  border: "1px solid black"
+}
+const search = {
+  borderBottom: "1px solid black"
 }
 
 function App() {
@@ -18,7 +21,7 @@ function App() {
     <Container>
       <Row>
         <Col xs sm={4} style={colStyle}>
-          <Row>
+          <Row style={search}>
             <h4>Search Component</h4>
           </Row>
           <CatList setCatProfile={setCatProfile} />

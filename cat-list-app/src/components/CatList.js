@@ -5,6 +5,10 @@ import { csv } from "d3"
 import catData from "../mockCatData.csv"
 // import CatListItem component
 import CatListItem from "./CatListItem"
+// styles
+const card = {
+  borderBottom: "1px solid black"
+}
 
 export default function CatList({setCatProfile}) {
   // keep track of cat list
@@ -31,7 +35,7 @@ export default function CatList({setCatProfile}) {
   return (
     <Row>
       {cats.map(cat => (
-        <Col key={cat.id}>
+        <Col key={cat.id} style={card}>
           <CatListItem catInfo={cat} setCatProfile={setCatProfile} />
         </Col>
       ))}
