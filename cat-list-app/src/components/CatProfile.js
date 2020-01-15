@@ -9,7 +9,8 @@ const center = {
 }
 const image = {
   marginTop: "20%",
-  maxWidth: "600px"
+  maxWidth: "600px",
+  borderRadius: "5px"
 }
 
 export default function CatProfile({catProfile}) {
@@ -20,7 +21,7 @@ export default function CatProfile({catProfile}) {
       <Container style={center}>
         <Row>
           <Col>
-            <Image src={thumbnailUrl} rounded style={image} />
+            <Image src={thumbnailUrl} style={image} />
           </Col>
           <Col>
             <h2>{name}</h2>

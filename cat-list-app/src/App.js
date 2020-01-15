@@ -24,7 +24,7 @@ function App() {
           <Row style={search}>
             <h4>Search Component</h4>
           </Row>
-          <CatList setCatProfile={setCatProfile} />
+          <CatList setCatProfile={setCatProfile} catProfile={catProfile} />
         </Col>
         <Col xs sm lg={8}>
           <CatProfile catProfile={catProfile} />

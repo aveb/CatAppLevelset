@@ -10,7 +10,7 @@ const card = {
   borderBottom: "1px solid black"
 }
 
-export default function CatList({setCatProfile}) {
+export default function CatList({catProfile, setCatProfile}) {
   // keep track of cat list
   const [cats, setCats] = useState([])
   // import mock cat data the first time component is rendered
@@ -36,7 +36,13 @@ export default function CatList({setCatProfile}) {
     <Row>
       {cats.map(cat => (
         <Col key={cat.id} style={card}>
-          <CatListItem catInfo={cat} setCatProfile={setCatProfile} />
+          <CatListItem
+            catInfo={cat}
+            setCatProfile={setCatProfile}
+            catProfile={catProfile}
+            cats={cats}
+            setCats={setCats}
+          />
         </Col>
       ))}
     </Row>
