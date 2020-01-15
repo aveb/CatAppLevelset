@@ -1,10 +1,15 @@
 import React from "react"
 import { Row, Col, Image } from "react-bootstrap"
 
-export default function CatListItem({ catInfo }) {
+export default function CatListItem({ catInfo, setCatProfile }) {
+
+  const handleClick = () => {
+    setCatProfile(catInfo)
+  }
+
   const { name, thumbnailUrl, birthdate } = catInfo
   return (
-    <div>
+    <div onClick={handleClick}>
       <Row>
         <Col md={6}>
           <Image src={thumbnailUrl} thumbnail fluid />

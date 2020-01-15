@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 // import bootstrap 3
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/css/bootstrap-theme.min.css"
@@ -12,6 +12,8 @@ const colStyle = {
 }
 
 function App() {
+  // create cat profile state
+  const [catProfile, setCatProfile] = useState({})
   return (
     <Container>
       <Row>
@@ -19,10 +21,10 @@ function App() {
           <Row>
             <h4>Search Component</h4>
           </Row>
-          <CatList />
+          <CatList setCatProfile={setCatProfile} />
         </Col>
         <Col>
-          <CatProfile />
+          <CatProfile catProfile={catProfile} />
         </Col>
       </Row>
     </Container>

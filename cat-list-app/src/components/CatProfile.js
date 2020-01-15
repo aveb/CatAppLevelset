@@ -1,9 +1,15 @@
 import React from "react"
 
-export default function CatProfile() {
+export default function CatProfile({catProfile}) {
+  const { id } = catProfile
+  
+  // conditionally render profile
+  if(id) {
+    return (
+      <h1>Here is a cat!</h1>
+    )
+  }
   return (
-    <div>
-      <h1>I am the cat profile</h1>
-    </div>
+    <h1>Click on A Cat</h1>
   )
 }

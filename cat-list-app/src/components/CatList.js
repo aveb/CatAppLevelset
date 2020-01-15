@@ -6,7 +6,7 @@ import catData from "../mockCatData.csv"
 // import CatListItem component
 import CatListItem from "./CatListItem"
 
-export default function CatList() {
+export default function CatList({setCatProfile}) {
   // keep track of cat list
   const [cats, setCats] = useState([])
   // import mock cat data the first time component is rendered
@@ -32,7 +32,7 @@ export default function CatList() {
     <Row>
       {cats.map(cat => (
         <Col key={cat.id}>
-          <CatListItem catInfo={cat} />
+          <CatListItem catInfo={cat} setCatProfile={setCatProfile} />
         </Col>
       ))}
     </Row>
