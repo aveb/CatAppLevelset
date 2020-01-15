@@ -1,19 +1,23 @@
 import React from "react"
-import { Container, Row, Col, Image } from "react-bootstrap"
+import { Row, Col, Image } from "react-bootstrap"
 
 export default function CatListItem({ catInfo }) {
-  const { name, thumbnailUrl } = catInfo
+  const { name, thumbnailUrl, birthdate } = catInfo
   return (
-    <Container>
+    <div>
       <Row>
-        <Col>
-          {/* <Image src={thumbnailUrl} thumbnail fluid /> */}
-          <h2>Picture</h2>
+        <Col md={6}>
+          <Image src={thumbnailUrl} thumbnail fluid />
         </Col>
-        <Col>
+        <Col md={6}>
           <h3>{name}</h3>
         </Col>
       </Row>
-    </Container>
+      <Row>
+        <Col md={6}>
+          <h5>{birthdate}</h5>
+        </Col>
+      </Row>
+    </div>
   )
 }

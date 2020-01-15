@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Container, Row, Col} from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 // use csv from d3 to import and parse mock data
 import { csv } from "d3"
 import catData from "../mockCatData.csv"
@@ -29,22 +29,12 @@ export default function CatList() {
   }, [])
 
   return (
-    <Container>
-      <Row>
-        <Col xs sm={3}>
-          <Row>
-            <h3>search here</h3>
-          </Row>
-          {cats.map(cat => (
-            <Row key={cat.id}>
-              <CatListItem catInfo={cat} />
-            </Row>
-          ))}
+    <Row>
+      {cats.map(cat => (
+        <Col key={cat.id}>
+          <CatListItem catInfo={cat} />
         </Col>
-        <Col>
-          <h1>Cat Profile Component</h1>
-        </Col>
-      </Row>
-    </Container>
+      ))}
+    </Row>
   )
 }
