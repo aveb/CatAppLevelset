@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 // use csv from d3 to import and parse mock data
 import { csv } from "d3"
 import catData from "../mockCatData.csv"
+// import CatListItem component
+import CatListItem from "./CatListItem"
 
 export default function CatList() {
   // keep track of cat list
@@ -27,10 +29,12 @@ export default function CatList() {
 
   return (
     <div>
-      <h1>Cat list here!</h1>
+      <h3>Search Component</h3>
       <ul>
         {cats.map(cat => (
-          <li key={cat.id}>{cat.name}</li>
+          <li key={cat.id}>
+            <CatListItem />
+          </li>
         ))}
       </ul>
     </div>
