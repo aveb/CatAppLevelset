@@ -13,8 +13,13 @@ export default function ProfileButtons({
   // state for edit modal
   const [show, setShow] = useState(false)
   // functions to open and close modal
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleClose = () => {
+    setShow(false)
+  }
+    
+  const handleShow = () => {
+    setShow(true)
+  }
   // delete cat
   const handleDelete = () => {
     // copy cats

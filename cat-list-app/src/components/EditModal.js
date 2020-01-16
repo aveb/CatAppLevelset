@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import moment from "moment"
 import DatePicker from "react-datepicker"
@@ -21,6 +21,7 @@ export default function EditModal({
 }) {
   // grab current cat profile values
   const { thumbnailUrl, ownerName, name, birthdate } = catProfile
+
   // set initial form state
   const [currentUrl, setCurrentUrl] = useState(thumbnailUrl)
   const [currentName, setCurrentName] = useState(name)
@@ -68,11 +69,35 @@ export default function EditModal({
     setCatProfile(currentCat)
     // close modal
     handleClose()
+    resetCurrentValues()
   }
+
+  useEffect(() => {
+    setCurrentUrl(thumbnailUrl)
+    setCurrentName(name)
+    setCurrentBirthdate(birthdate)
+    setCurrentOwner(ownerName)
+  }, [showing])
+
+  // function to reset form values to current
+  const resetCurrentValues = () => {
+    setCurrentUrl(thumbnailUrl)
+    setCurrentName(name)
+    setCurrentBirthdate(birthdate)
+    setCurrentOwner(ownerName)
+  }
+
+  // handle cancel
+  const handleCancel = () => {
+    handleClose()
+    resetCurrentValues()
+  }
+
+
 
   return (
     <>
-      <Modal show={showing} onHide={handleClose}>
+      <Modal show={showing} onHide={handleCancel}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Cat</Modal.Title>
         </Modal.Header>
@@ -126,7 +151,7 @@ export default function EditModal({
           <Button bsStyle="success" onClick={handleSave}>
             Save
           </Button>
-          <Button bsStyle="default" onClick={handleClose}>
+          <Button bsStyle="default" onClick={handleCancel}>
             Close
           </Button>
         </Modal.Footer>
