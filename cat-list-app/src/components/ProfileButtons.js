@@ -11,7 +11,18 @@ export default function ProfileButtons({catProfile, setCatProfile, cats, setCats
   const handleShow = () => setShow(true)
   // delete cat
   const handleDelete = () => {
-    console.log("deleting")
+    // copy cats
+    const currentCats = cats.slice(0)
+    // get index to delete
+    cats.forEach((cat, index) => {
+      if (cat.id === catProfile.id) {
+        // remove cat from cats array
+        currentCats.splice(index, 1)
+        // update state
+        setCats(currentCats)
+        setCatProfile({})
+      }
+    })
   }
 
   return (
