@@ -117,5 +117,5 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
         </Modal.Footer>
       </Modal>
     </>
-  );
+  )
 }

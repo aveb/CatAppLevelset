@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { FormGroup, ControlLabel, FormControl } from "react-bootstrap"
 
-export default function SearchCats({setCats}) {
+export default function SearchCats({ setCats }) {
   // form input state
   const [searchText, setSearchText] = useState("")
   // search as user types and update cats
