@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import {
   Modal,
   Button,
@@ -7,8 +8,15 @@ import {
   ControlLabel
 } from "react-bootstrap"
 
-export default function EditModal({ showing, handleClose, catProfile, cats, setCats, setCatProfile }) {
-  // grab current values
+export default function EditModal({
+  showing,
+  handleClose,
+  catProfile,
+  cats,
+  setCats,
+  setCatProfile
+}) {
+  // grab current cat profile values
   const { thumbnailUrl, ownerName, name, birthdate } = catProfile
   // set initial form state
   const [currentUrl, setCurrentUrl] = useState(thumbnailUrl)
@@ -16,12 +24,12 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
   const [currentBirthDate, setCurrentBirthdate] = useState(birthdate)
   const [currentOwner, setCurrentOwner] = useState(ownerName)
 
-  // handle user input
+  // handle user input in form
   const handleNameChange = e => {
     setCurrentName(e.target.value)
   }
   const handleUrlChange = e => {
-    setCurrentUrl(e.target.value);
+    setCurrentUrl(e.target.value)
   }
   const handleBirthDateChange = e => {
     setCurrentBirthdate(e.target.value)
@@ -118,4 +126,21 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
       </Modal>
     </>
   )
+}
+
+// props validation
+EditModal.propTypes = {
+  showing: PropTypes.func.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  catProfile: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    birthdate: PropTypes.string,
+    ownerName: PropTypes.string,
+    viewsCount: PropTypes.number
+  }).isRequired,
+  setCatProfile: PropTypes.func.isRequired,
+  setCats: PropTypes.func.isRequired,
+  cats: PropTypes.arrayOf(PropTypes.object).isRequired
 }

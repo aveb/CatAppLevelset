@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import { FormGroup, ControlLabel, FormControl } from "react-bootstrap"
 
 export default function SearchCats({ setCats }) {
@@ -29,4 +30,9 @@ export default function SearchCats({ setCats }) {
       </FormGroup>
     </form>
   )
+}
+
+// props validation
+SearchCats.propTypes = {
+  setCats: PropTypes.func.isRequired
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Image, Row, Col } from "react-bootstrap"
 
 // styles
@@ -12,13 +13,12 @@ const img = {
 export default function CatListItem({
   catInfo,
   setCatProfile,
-  cats,
   setCats,
-  catProfile 
+  catProfile
 }) {
   const handleClick = () => {
     // check if not currently being viewed. Else do nothing
-    if ( catInfo.id !== catProfile.id ) {
+    if (catInfo.id !== catProfile.id) {
       // update view count
       const currentCats = JSON.parse(localStorage.getItem("allCats"))
       currentCats.forEach((cat, index) => {
@@ -40,6 +40,7 @@ export default function CatListItem({
   }
 
   const { name, thumbnailUrl, birthdate } = catInfo
+  // linting error because using div as clickeable.  Use card in future
   return (
     <div onClick={handleClick} style={padding} role="button">
       <Row>
@@ -53,4 +54,17 @@ export default function CatListItem({
       <h5>{birthdate}</h5>
     </div>
   )
+}
+
+// props validation
+CatListItem.propTypes = {
+  catInfo: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    birthdate: PropTypes.string
+  }).isRequired,
+  setCatProfile: PropTypes.func.isRequired,
+  setCats: PropTypes.func.isRequired,
+  catProfile: PropTypes.instanceOf(Object).isRequired
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Image, Grid, Row, Col } from "react-bootstrap"
 import ProfileButtons from "./ProfileButtons"
 
@@ -60,4 +61,19 @@ export default function CatProfile({
       <h1>Click on a cat!</h1>
     </div>
   )
+}
+
+// props validation
+CatProfile.propTypes = {
+  catProfile: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    birthdate: PropTypes.string,
+    ownerName: PropTypes.string,
+    viewsCount: PropTypes.number
+  }).isRequired,
+  setCatProfile: PropTypes.func.isRequired,
+  setCats: PropTypes.func.isRequired,
+  cats: PropTypes.arrayOf(PropTypes.object).isRequired
 }

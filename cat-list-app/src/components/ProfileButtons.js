@@ -1,9 +1,15 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import { ButtonToolbar, Button } from "react-bootstrap"
 // import edit modal
 import EditModal from "./EditModal"
 
-export default function ProfileButtons({catProfile, setCatProfile, cats, setCats}) {
+export default function ProfileButtons({
+  catProfile,
+  setCatProfile,
+  cats,
+  setCats
+}) {
   // state for edit modal
   const [show, setShow] = useState(false)
   // functions to open and close modal
@@ -47,4 +53,12 @@ export default function ProfileButtons({catProfile, setCatProfile, cats, setCats
       </ButtonToolbar>
     </div>
   )
+}
+
+// props validation
+ProfileButtons.propTypes = {
+  catProfile: PropTypes.instanceOf(Object).isRequired,
+  setCatProfile: PropTypes.func.isRequired,
+  cats: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setCats: PropTypes.func.isRequired
 }
