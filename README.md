@@ -20,7 +20,7 @@ Make sure you have the following installed on your local machine:
 
 Fork & Clone Repo from:
 
-`git clone https://github.com/aveb/CatAppLevelset.git`
+<https://github.com/aveb/CatAppLevelset.git>
 
 ### Installing
 
@@ -45,5 +45,5 @@ Fork & Clone Repo from:
 
 ## Acknowledgments
 
-Many thanks to my wife and two cats for their unconditional support!
+Many thanks to my wife and two (real) cats for their unconditional support!
 
