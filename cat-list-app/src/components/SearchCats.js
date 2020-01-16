@@ -24,7 +24,7 @@ export default function SearchCats({ setCats }) {
         <FormControl
           type="text"
           value={searchText}
-          placeholder="Start typing..."
+          placeholder="Start typing name..."
           onChange={handleSearch}
         />
       </FormGroup>

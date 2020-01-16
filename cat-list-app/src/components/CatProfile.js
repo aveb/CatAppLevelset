@@ -16,6 +16,11 @@ const imageStyle = {
   marginTop: "50px"
 }
 
+const buttonContainer = {
+  // give buttons room when less than 5 cats
+  marginBottom: "50px"
+}
+
 export default function CatProfile({
   catProfile,
   setCatProfile,
@@ -44,7 +49,13 @@ export default function CatProfile({
             <h5>Owned By: {ownerName}</h5>
             <h5>Viewed {viewsCount} times</h5>
           </Col>
-          <Col xm={6} xsOffset={2} smOffset={4} mdOffset={5}>
+          <Col
+            xm={6}
+            xsOffset={2}
+            smOffset={4}
+            mdOffset={5}
+            style={buttonContainer}
+          >
             <ProfileButtons
               catProfile={catProfile}
               setCatProfile={setCatProfile}
