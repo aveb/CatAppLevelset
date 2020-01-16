@@ -74,7 +74,7 @@ export default function EditModal({
         </Modal.Header>
         <Modal.Body>
           <form>
-            <FormGroup controlId="formBasicText">
+            <FormGroup>
               <ControlLabel>Thumbnail Url</ControlLabel>
               <FormControl
                 type="text"
@@ -91,7 +91,7 @@ export default function EditModal({
                 onChange={handleNameChange}
               />
               <br />
-              <ControlLabel>Birth date</ControlLabel>
+              <ControlLabel>Birth date (YYYY-MM-DD)</ControlLabel>
               <FormControl
                 type="text"
                 value={currentBirthDate}
@@ -130,7 +130,7 @@ export default function EditModal({
 
 // props validation
 EditModal.propTypes = {
-  showing: PropTypes.func.isRequired,
+  showing: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
   catProfile: PropTypes.shape({
     id: PropTypes.number,

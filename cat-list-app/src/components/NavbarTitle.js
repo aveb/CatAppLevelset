@@ -5,7 +5,7 @@ import { Navbar } from "react-bootstrap"
 const navStyles = {
   // override container styling
   marginRight: "-15px",
-  marginLeft: "-15px"
+  marginLeft: "-16px"
 }
 
 export default function NavbarTitle() {

@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import moment from "moment"
 import { Image, Row, Col } from "react-bootstrap"
 
 // styles
@@ -51,7 +52,7 @@ export default function CatListItem({
           <h5>{name}</h5>
         </Col>
       </Row>
-      <h5>{birthdate}</h5>
+      <h5>{moment(birthdate).format("ll")}</h5>
     </div>
   )
 }

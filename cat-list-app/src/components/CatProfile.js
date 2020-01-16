@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import moment from "moment"
 import { Image, Grid, Row, Col } from "react-bootstrap"
 import ProfileButtons from "./ProfileButtons"
 
@@ -39,7 +40,7 @@ export default function CatProfile({
           </Col>
           <Col xm={10} xsOffset={1}>
             <h4>{name}</h4>
-            <h5>{birthdate}</h5>
+            <h5>Born {moment(birthdate).format("ll")}</h5>
             <h5>Owned By: {ownerName}</h5>
             <h5>Viewed {viewsCount} times</h5>
           </Col>
