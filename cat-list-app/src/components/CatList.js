@@ -10,9 +10,8 @@ export default function CatList({ catProfile, setCatProfile, cats, setCats }) {
   return (
     <div>
       {cats.map(cat => (
-        <div style={card}>
+        <div style={card} key={cat.id}>
           <CatListItem
-            key={cat.id}
             catInfo={cat}
             setCatProfile={setCatProfile}
             catProfile={catProfile}

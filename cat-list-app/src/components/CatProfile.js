@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Row, Col, Image } from "react-bootstrap"
+import { Image } from "react-bootstrap"
 import ProfileButtons from "./ProfileButtons"
 
 // styles
@@ -15,6 +15,7 @@ const image = {
 }
 
 const profile = {
+  marginLeft: "30%",
   textAlign: "left"
 }
 
