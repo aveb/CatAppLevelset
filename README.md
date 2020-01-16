@@ -16,13 +16,13 @@ Make sure you have the following installed on your local machine:
 
 Fork & Clone Repo from:
 
-`https://github.com/aveb/CatAppLevelset.git`
+`git clone https://github.com/aveb/CatAppLevelset.git`
 
 ### Installing
 
 1. `cd CatAppLevelset`
 1. `cd cat-list-app`
-2. Install dependencies: `yarn`
+2. Install dependencies: type `yarn`
 3. `yarn start`
 4. If browser doesn't automatically open, visit <http://localhost:3000/>
 
