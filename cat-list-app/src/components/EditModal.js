@@ -30,10 +30,10 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
     setCurrentName(e.target.value)
   }
   const handleUrlChange = e => {
-    setCurrentUrl(e.value);
+    setCurrentUrl(e.target.value);
   }
   const handleBirthDateChange = e => {
-    setCurrentBirthdate(e.value)
+    setCurrentBirthdate(e.target.value)
   }
   const handleOwnerNameChange = e => {
     setCurrentOwner(e.target.value)

@@ -41,7 +41,8 @@ export default function CatListItem({
 
   const { name, thumbnailUrl, birthdate } = catInfo
   return (
-    <div onClick={handleClick} style={padding}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div onClick={handleClick} style={padding} role="button">
       <Image style={img} src={thumbnailUrl} thumbnail />
       <h3 className="pull-right">{name}</h3>
       <h5>{birthdate}</h5>
