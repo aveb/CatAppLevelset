@@ -38,11 +38,11 @@ export default function ProfileButtons({catProfile, setCatProfile, cats, setCats
         setCats={setCats}
       />
       <ButtonToolbar>
-        <Button className="pull-right" variant="danger" onClick={handleDelete}>
-          Delete
-        </Button>
-        <Button className="pull-right" variant="warning" onClick={handleShow}>
+        <Button bsStyle="warning" onClick={handleShow}>
           Edit
+        </Button>
+        <Button bsStyle="danger" onClick={handleDelete}>
+          Delete
         </Button>
       </ButtonToolbar>
     </div>

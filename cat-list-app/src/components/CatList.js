@@ -3,7 +3,7 @@ import React from "react"
 import CatListItem from "./CatListItem"
 // styles
 const card = {
-  borderBottom: "1px solid black"
+  borderTop: "1px solid black"
 }
 
 export default function CatList({ catProfile, setCatProfile, cats, setCats }) {

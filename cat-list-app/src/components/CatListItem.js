@@ -9,10 +9,6 @@ const img = {
   maxWidth: "100px"
 }
 
-const imgTitleContainer = {
-  
-}
-
 export default function CatListItem({
   catInfo,
   setCatProfile,

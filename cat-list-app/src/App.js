@@ -11,14 +11,15 @@ import CatList from "./components/CatList"
 import CatProfile from "./components/CatProfile"
 // styles
 const colStyle = {
-  border: "1px solid black"
-}
-const search = {
-  borderBottom: "1px solid black"
+  borderRight: "1px solid black"
 }
 
-const center = {
-  textAlign: "center"
+const containerBorder = {
+  border: "1px solid black"
+}
+
+const profileContainer = {
+  overflowX: "hidden"
 }
 
 function App() {
@@ -55,10 +56,10 @@ function App() {
   }, [])
   // render component
   return (
-    <Grid>
+    <Grid style={containerBorder}>
       <Row>
         <Col xs={4} style={colStyle}>
-          <div style={search}>
+          <div>
             <h4>Search Component</h4>
           </div>
           <CatList
@@ -69,7 +70,7 @@ function App() {
           />
         </Col>
         <Col xs={8}>
-          <div style={center}>
+          <div style={profileContainer}>
             <CatProfile
               setCatProfile={setCatProfile}
               catProfile={catProfile}
