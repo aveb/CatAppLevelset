@@ -5,7 +5,7 @@ import {
   FormGroup,
   FormControl,
   FormLabel
-} from "react-bootstrap";
+} from "react-bootstrap"
 
 // styles
 const modalStyles = {
@@ -51,8 +51,12 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
       ownerName: currentOwner,
       viewsCount
     }
-    // update object in cats array at index one less than id
-    currentCats[id - 1] = currentCat
+    // find cat to update
+    cats.forEach((cat, index) => {
+      if (cat.id === catProfile.id) {
+        currentCats[index] = currentCat
+      }
+    })
     // save updated array to state
     setCats(currentCats)
     // update current profile
