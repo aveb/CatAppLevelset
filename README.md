@@ -2,6 +2,10 @@
 
 An application for viewing, editing, and deleting really cool cats.
 
+## Live Demo
+
+<Here>
+
 ## Getting Started
 
 This section walks you through getting a copy of this application running on your local machine.
@@ -9,7 +13,7 @@ This section walks you through getting a copy of this application running on you
 ### Prerequisites
 
 Make sure you have the following installed on your local machine:
- - [node.js](https://nodejs.org/en/)
+ - [node.js v13.1.0 or higher](https://nodejs.org/en/)
  - [yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
 
 ### Roadmap
