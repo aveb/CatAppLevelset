@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
+import moment from "moment"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
 import {
   Modal,
   Button,
@@ -31,8 +34,9 @@ export default function EditModal({
   const handleUrlChange = e => {
     setCurrentUrl(e.target.value)
   }
-  const handleBirthDateChange = e => {
-    setCurrentBirthdate(e.target.value)
+  const handleBirthDateChange = date => {
+    const formatedDate = (moment(date).add(6,"hours").format("YYYY-MM-DD"))
+    setCurrentBirthdate(formatedDate)
   }
   const handleOwnerNameChange = e => {
     setCurrentOwner(e.target.value)
@@ -91,15 +95,7 @@ export default function EditModal({
                 onChange={handleNameChange}
               />
               <br />
-              <ControlLabel>Birth date (YYYY-MM-DD)</ControlLabel>
-              <FormControl
-                type="text"
-                value={currentBirthDate}
-                placeholder="YYYY-MM-DD"
-                onChange={handleBirthDateChange}
-              />
-              <br />
-              <ControlLabel>Select</ControlLabel>
+              <ControlLabel>Select Owner</ControlLabel>
               <FormControl
                 componentClass="select"
                 value={currentOwner}
@@ -112,6 +108,17 @@ export default function EditModal({
                 <option value="Sam">Sam</option>
                 <option value="Jesse">Jessse</option>
               </FormControl>
+              <br />
+              <ControlLabel>Birth date</ControlLabel>
+              <div>
+                <label>
+                  <DatePicker
+                    dateFormat="MMMM d, yyyy"
+                    selected={new Date(currentBirthDate)}
+                    onChange={handleBirthDateChange}
+                  />
+                </label>
+              </div>
             </FormGroup>
           </form>
         </Modal.Body>
