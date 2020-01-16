@@ -35,7 +35,7 @@ export default function EditModal({
     setCurrentUrl(e.target.value)
   }
   const handleBirthDateChange = date => {
-    const formatedDate = (moment(date).add(6,"hours").format("YYYY-MM-DD"))
+    const formatedDate = (moment(date).format("YYYY-MM-DD"))
     setCurrentBirthdate(formatedDate)
   }
   const handleOwnerNameChange = e => {
@@ -114,7 +114,7 @@ export default function EditModal({
                 <label>
                   <DatePicker
                     dateFormat="MMMM d, yyyy"
-                    selected={new Date(currentBirthDate)}
+                    selected={new Date(moment(currentBirthDate))}
                     onChange={handleBirthDateChange}
                   />
                 </label>
