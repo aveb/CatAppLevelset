@@ -67,10 +67,18 @@ export default function CatProfile({
       </Grid>
     )
   }
-  // render if no cat has been clicked on since load or refresh
+  // check if there are cats to click on
+  if (cats.length > 0) {
+    return (
+      <div style={center}>
+        <h1>Click on a cat!</h1>
+      </div>
+    )
+  }
+  // handle no more cats
   return (
     <div style={center}>
-      <h1>Click on a cat!</h1>
+      <h1>No more cats...</h1>
     </div>
   )
 }
