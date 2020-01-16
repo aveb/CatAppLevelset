@@ -9,38 +9,45 @@ const center = {
   justifyContent: "center"
 }
 const image = {
-  marginTop: "20%",
-  maxWidth: "600px",
+  marginTop: "10%",
+  maxWidth: "400px",
   borderRadius: "5px"
 }
 
-export default function CatProfile({catProfile}) {
-  const { id, name, birthdate, thumbnailUrl, ownerName, viewsCount } = catProfile
+const profile = {
+  textAlign: "left"
+}
+
+export default function CatProfile({
+  catProfile,
+  setCatProfile,
+  cats,
+  setCats
+}) {
+  const {
+    id,
+    name,
+    birthdate,
+    thumbnailUrl,
+    ownerName,
+    viewsCount
+  } = catProfile
   // conditionally render profile
   if (id) {
     return (
-      <Container style={center}>
-        <Row>
-          <Col>
-            <Image src={thumbnailUrl} style={image} />
-          </Col>
-          <Col>
-            <h2>{name}</h2>
-          </Col>
-          <Col>
-            <h3>{birthdate}</h3>
-          </Col>
-          <Col>
-            <h3>Owned By: {ownerName}</h3>
-          </Col>
-          <Col>
-            <h3>Viewed {viewsCount} times</h3>
-          </Col>
-          <Col>
-            <ProfileButtons />
-          </Col>
-        </Row>
-      </Container>
+      <div style={profile}>
+        <Image src={thumbnailUrl} style={image} />
+        <h2>{name}</h2>
+        <h3>{birthdate}</h3>
+        <h3>Owned By: {ownerName}</h3>
+        <h3>Viewed {viewsCount} times</h3>
+        <ProfileButtons
+          catProfile={catProfile}
+          setCatProfile={setCatProfile}
+          cats={cats}
+          setCats={setCats}
+        />
+      </div>
     )
   }
   return (

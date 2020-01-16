@@ -5,6 +5,9 @@ import { Row, Col, Image } from "react-bootstrap"
 const padding = {
   padding: "5px"
 }
+const img = {
+  maxWidth: "100px"
+}
 
 export default function CatListItem({
   catInfo,
@@ -37,19 +40,9 @@ export default function CatListItem({
   const { name, thumbnailUrl, birthdate } = catInfo
   return (
     <div onClick={handleClick} style={padding}>
-      <Row>
-        <Col md={6}>
-          <Image src={thumbnailUrl} thumbnail fluid />
-        </Col>
-        <Col md={6}>
-          <h3>{name}</h3>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6}>
-          <h5>{birthdate}</h5>
-        </Col>
-      </Row>
+      <Image style={img} src={thumbnailUrl} thumbnail />
+      <h3 className="pull-right">{name}</h3>
+      <h5>{birthdate}</h5>
     </div>
   )
 }
