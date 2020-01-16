@@ -57,7 +57,7 @@ export default function CatProfile({
   // render if no cat has been clicked on since load or refresh
   return (
     <div style={center}>
-      <h1>Click on A Cat</h1>
+      <h1>Click on a cat!</h1>
     </div>
   )
 }

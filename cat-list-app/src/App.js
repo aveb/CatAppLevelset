@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap-theme.min.css"
 // import compontents
 import CatList from "./components/CatList"
 import CatProfile from "./components/CatProfile"
+import SearchCats from "./components/SearchCats"
 // styles
 const colStyle = {
   borderRight: "1px solid black"
@@ -59,9 +60,7 @@ function App() {
     <Grid style={containerBorder}>
       <Row>
         <Col xs={4} style={colStyle}>
-          <div>
-            <h4>Search Component</h4>
-          </div>
+          <SearchCats cats={cats} setCats={setCats} />
           <CatList
             setCatProfile={setCatProfile}
             catProfile={catProfile}
