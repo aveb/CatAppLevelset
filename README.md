@@ -20,6 +20,7 @@ Fork & Clone Repo from:
 
 ### Installing
 
+1. `cd CatAppLevelset`
 1. `cd cat-list-app`
 2. Install dependencies: `yarn`
 3. `yarn start`

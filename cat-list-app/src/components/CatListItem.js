@@ -20,18 +20,18 @@ export default function CatListItem({
     // check if not currently being viewed. Else do nothing
     if ( catInfo.id !== catProfile.id ) {
       // update view count
-      cats.forEach((cat, index) => {
+      const currentCats = JSON.parse(localStorage.getItem("allCats"))
+      currentCats.forEach((cat, index) => {
         if (catInfo.id === cat.id) {
           // update catInfo object
           const updatedCatInfo = catInfo
           updatedCatInfo.viewsCount += 1
-          // update cats array
-          const updatedCats = cats
-          updatedCats[index] = updatedCatInfo
+          // update current cats array at correct index
+          currentCats[index] = updatedCatInfo
           // update state with new cats array
-          setCats(updatedCats)
+          setCats(currentCats)
           // update localStorage
-          localStorage.setItem("allCats", JSON.stringify(updatedCats))
+          localStorage.setItem("allCats", JSON.stringify(currentCats))
           // update profile with clicked cat info
           setCatProfile(updatedCatInfo)
         }
