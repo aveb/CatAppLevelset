@@ -4,17 +4,8 @@ import {
   Button,
   FormGroup,
   FormControl,
-  FormLabel
+  ControlLabel
 } from "react-bootstrap"
-
-// styles
-const modalStyles = {
-  // needed to fix bug of modal not showing
-  opacity: "1",
-  marginTop: "100px",
-  // fix top of modal being cut off
-  overflow: "visible"
-}
 
 export default function EditModal({ showing, handleClose, catProfile, cats, setCats, setCatProfile }) {
   // grab current values
@@ -69,14 +60,14 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
 
   return (
     <>
-      <Modal show={showing} onHide={handleClose} style={modalStyles}>
+      <Modal show={showing} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Cat</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
             <FormGroup controlId="formBasicText">
-              <FormLabel>Thumbnail Url</FormLabel>
+              <ControlLabel>Thumbnail Url</ControlLabel>
               <FormControl
                 type="text"
                 value={currentUrl}
@@ -84,7 +75,7 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
                 onChange={handleUrlChange}
               />
               <br />
-              <FormLabel>Name</FormLabel>
+              <ControlLabel>Name</ControlLabel>
               <FormControl
                 type="text"
                 value={currentName}
@@ -92,7 +83,7 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
                 onChange={handleNameChange}
               />
               <br />
-              <FormLabel>Birth date</FormLabel>
+              <ControlLabel>Birth date</ControlLabel>
               <FormControl
                 type="text"
                 value={currentBirthDate}
@@ -100,9 +91,9 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
                 onChange={handleBirthDateChange}
               />
               <br />
-              <FormLabel>Select</FormLabel>
+              <ControlLabel>Select</ControlLabel>
               <FormControl
-                as="select"
+                componentClass="select"
                 value={currentOwner}
                 placeholder="select"
                 onChange={handleOwnerNameChange}
@@ -117,11 +108,11 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button bsStyle="success" onClick={handleSave}>
+            Save
           </Button>
-          <Button variant="primary" onClick={handleSave}>
-            Save Changes
+          <Button bsStyle="default" onClick={handleClose}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

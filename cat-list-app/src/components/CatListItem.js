@@ -1,5 +1,5 @@
 import React from "react"
-import { Image } from "react-bootstrap"
+import { Image, Row, Col } from "react-bootstrap"
 
 // styles
 const padding = {
@@ -7,6 +7,10 @@ const padding = {
 }
 const img = {
   maxWidth: "100px"
+}
+
+const imgTitleContainer = {
+  
 }
 
 export default function CatListItem({
@@ -43,8 +47,14 @@ export default function CatListItem({
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div onClick={handleClick} style={padding} role="button">
-      <Image style={img} src={thumbnailUrl} thumbnail />
-      <h3 className="pull-right">{name}</h3>
+      <Row>
+        <Col xs={12} sm={6}>
+          <Image style={img} src={thumbnailUrl} thumbnail />
+        </Col>
+        <Col xs={12} sm={6}>
+          <h5>{name}</h5>
+        </Col>
+      </Row>
       <h5>{birthdate}</h5>
     </div>
   )

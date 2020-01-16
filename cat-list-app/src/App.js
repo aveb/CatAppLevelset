@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { Grid, Row, Col } from "react-bootstrap"
 // use csv from d3 to import and parse mock data
 import { csv } from "d3"
 import catData from "./mockCatData.csv"
@@ -55,9 +55,9 @@ function App() {
   }, [])
   // render component
   return (
-    <Container>
+    <Grid>
       <Row>
-        <Col sm={4} style={colStyle}>
+        <Col xs={4} style={colStyle}>
           <div style={search}>
             <h4>Search Component</h4>
           </div>
@@ -68,7 +68,7 @@ function App() {
             setCats={setCats}
           />
         </Col>
-        <Col sm={8}>
+        <Col xs={8}>
           <div style={center}>
             <CatProfile
               setCatProfile={setCatProfile}
@@ -79,7 +79,7 @@ function App() {
           </div>
         </Col>
       </Row>
-    </Container>
+    </Grid>
   )
 }
 
