@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Image } from "react-bootstrap"
+import { Image } from "react-bootstrap"
 
 // styles
 const padding = {
@@ -30,6 +30,8 @@ export default function CatListItem({
           updatedCats[index] = updatedCatInfo
           // update state with new cats array
           setCats(updatedCats)
+          // update localStorage
+          localStorage.setItem("allCats", JSON.stringify(updatedCats))
           // update profile with clicked cat info
           setCatProfile(updatedCatInfo)
         }

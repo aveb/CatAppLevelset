@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import {
   Modal,
   Button,
@@ -59,6 +59,8 @@ export default function EditModal({ showing, handleClose, catProfile, cats, setC
     })
     // save updated array to state
     setCats(currentCats)
+    // update localStorage
+    localStorage.setItem("allCats", JSON.stringify(currentCats))
     // update current profile
     setCatProfile(currentCat)
     // close modal

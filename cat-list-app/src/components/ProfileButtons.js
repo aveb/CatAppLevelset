@@ -18,6 +18,8 @@ export default function ProfileButtons({catProfile, setCatProfile, cats, setCats
       if (cat.id === catProfile.id) {
         // remove cat from cats array
         currentCats.splice(index, 1)
+        // delete cat from localStorage
+        localStorage.setItem("allCats", JSON.stringify(currentCats))
         // update state
         setCats(currentCats)
         setCatProfile({})

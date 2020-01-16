@@ -28,21 +28,30 @@ function App() {
   const [cats, setCats] = useState([])
   // import mock cat data the first time component is rendered
   useEffect(() => {
-    csv(catData, cat => {
-      // coerce id and viewsCount into numbers
-      const { id, thumbnailUrl, name, birthdate, ownerName, viewsCount } = cat
-      return {
-        id: +id,
-        thumbnailUrl,
-        name,
-        birthdate,
-        ownerName,
-        viewsCount: +viewsCount
-      }
-    }).then(parsedCatData => {
-      // set mock data in component state
-      setCats(parsedCatData)
-    })
+    const localCatData = JSON.parse(localStorage.getItem("allCats"))
+    // load mock cat data if no cats on local storage
+    if (!localCatData) {
+      csv(catData, cat => {
+        // coerce id and viewsCount into numbers
+        const { id, thumbnailUrl, name, birthdate, ownerName, viewsCount } = cat
+        return {
+          id: +id,
+          thumbnailUrl,
+          name,
+          birthdate,
+          ownerName,
+          viewsCount: +viewsCount
+        }
+      }).then(parsedCatData => {
+        // set mock data in component state
+        setCats(parsedCatData)
+        // update localStorage
+        localStorage.setItem("allCats", JSON.stringify(parsedCatData))
+      })
+    } else {
+      // update state with all cats
+      setCats(localCatData)
+    }
   }, [])
   // render component
   return (
