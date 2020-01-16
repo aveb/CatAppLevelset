@@ -106,7 +106,7 @@ export default function EditModal({
                 <option value="Macela">Marcela</option>
                 <option value="Patricia">Patricia</option>
                 <option value="Sam">Sam</option>
-                <option value="Jesse">Jessse</option>
+                <option value="Jesse">Jesse</option>
               </FormControl>
               <br />
               <ControlLabel>Birth date</ControlLabel>
