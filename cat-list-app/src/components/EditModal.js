@@ -69,9 +69,9 @@ export default function EditModal({
     setCatProfile(currentCat)
     // close modal
     handleClose()
-    resetCurrentValues()
   }
-
+  
+  // used to update default form values every time modal is opened
   useEffect(() => {
     setCurrentUrl(thumbnailUrl)
     setCurrentName(name)
@@ -79,25 +79,9 @@ export default function EditModal({
     setCurrentOwner(ownerName)
   }, [showing])
 
-  // function to reset form values to current
-  const resetCurrentValues = () => {
-    setCurrentUrl(thumbnailUrl)
-    setCurrentName(name)
-    setCurrentBirthdate(birthdate)
-    setCurrentOwner(ownerName)
-  }
-
-  // handle cancel
-  const handleCancel = () => {
-    handleClose()
-    resetCurrentValues()
-  }
-
-
-
   return (
     <>
-      <Modal show={showing} onHide={handleCancel}>
+      <Modal show={showing} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Cat</Modal.Title>
         </Modal.Header>
@@ -151,7 +135,7 @@ export default function EditModal({
           <Button bsStyle="success" onClick={handleSave}>
             Save
           </Button>
-          <Button bsStyle="default" onClick={handleCancel}>
+          <Button bsStyle="default" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>
